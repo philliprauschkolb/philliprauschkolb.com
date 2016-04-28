@@ -1,0 +1,170 @@
+/**
+
+AJAX loading Instagram data
+
+**/
+
+// Popup function
+$(document).on("click",".popup",function(e){
+	e.preventDefault();
+	var large_image = $(this).attr('href');
+	    $('#overlay').css('opacity','1');
+	    $('#overlay').css('z-index','100');
+	    
+	    if( $(this).hasClass('video')){
+	    	// If video
+		    var video = '<video controls autoplay>';
+	        	video += '<source src="' + large_image + '" type="video/mp4">';
+	      		video += '</video>';
+	      	$('#overlay').append(video);
+	      	$('video').mediaelementplayer({
+	      		defaultVideoWidth: 303
+	      	});
+	      	} else{
+	      		 // If image
+	    		$('#overlay').append('<img src="' + large_image + '">');
+	    		window.setTimeout(function() {
+				    $('#overlay img').css('max-width','100%');
+				}, 200);
+	    		
+	      	}
+ });
+
+
+
+// Close function for the lightbox overlay
+$('#overlay').click(function(){
+	    $(this).css('opacity','0');
+		$('#overlay').css('z-index','0');
+		$('#overlay img').remove();
+		$('#overlay video').remove();
+		$('#overlay .mejs-video').remove();
+		$('#overlay .mejs-offscreen').remove();
+	
+});
+
+
+// User data load
+$.ajax({
+  type: "GET",
+  dataType: "jsonp",
+  cache: false,
+  url: "https://api.instagram.com/v1/users/144685754/?client_id=302fe2ddb915495faa9d580823e19683",
+  success: function(data) {
+  	var bio = '<img class="profile-pic" src="' + data.data.profile_picture + '"/>';
+  		bio += '<h1>' + data.data.full_name + '</h1>';
+  		bio += '<p>' + data.data.bio + '</p>';
+   
+    // Do stuff with the data here
+  	$('#sidebar').append(bio);
+  }
+});
+
+
+// Initial Load of items
+$.ajax({
+  type: "GET",
+  dataType: "jsonp",
+  cache: false,
+  url: "https://api.instagram.com/v1/users/144685754/media/recent/?client_id=302fe2ddb915495faa9d580823e19683",
+  success: function(data) {
+  	
+    // placing the images on the page
+	    for (var i = 0; i < 20; i++) {
+
+	    	var fullLink;
+	    	var linkClass;
+	    	var playClass;
+	    	// Check for video posts and add class if it's a video
+	    	if ( data.data[i].videos != undefined ){
+	    		fullLink = data.data[i].videos.standard_resolution.url;
+	    		linkClass = 'video';
+	    		playClass = 'play'
+	    	} else {
+	    		fullLink = data.data[i].images.standard_resolution.url;
+	    		linkClass = '';
+	    		playClass = '';
+	    	}
+	    	// Create markup for each post
+	    	var igPost = "<div class='col-xs-12 col-sm-4 col-md-3'><div class='ig-thumbnail'><a class='popup " + linkClass + "' target='_blank' href='" + fullLink + "'>";
+	    		igPost += "<span class='" + playClass + "'></span><img src='" + data.data[i].images.low_resolution.url + "'></img></a>";
+	    		igPost += "</div></div>";
+
+
+	          
+	          // Append posts to the page
+	          $("#posts").append(igPost);
+
+	          // Wait a split second, then add class to fade items in
+				window.setTimeout(function() {
+				    $(".ig-thumbnail").addClass("zero");
+				    // Show the 'Load More' button
+				    $(".more-btn").removeClass('hidden');
+				}, 200);
+				
+	    }
+
+	    
+
+	    // Set variable for the next page of data to be loaded
+	    var nextPage = data.pagination.next_url;
+
+	    // Run another ajax call when the 'Load More' button is clicked
+	    $('#loadMore').click(function(){
+	    	// Change button text while new content is loading
+	    	$(this).text('Loading...');
+	    	// Get the new content
+	    	$.ajax({
+			  type: "GET",
+			  dataType: "jsonp",
+			  cache: false,
+			  url: nextPage,
+			  success: function(data) {
+
+			  	for (var i = 0; i < 20; i++) {
+
+			  		var fullLink;
+			    	var linkClass;
+			    	var playClass;
+
+			    	if ( data.data[i].videos != undefined ){
+			    		fullLink = data.data[i].videos.standard_resolution.url;
+			    		linkClass = 'video';
+			    		playClass = 'play'
+
+			    	} else {
+			    		fullLink = data.data[i].images.standard_resolution.url;
+			    		linkClass = '';
+			    		playClass = '';
+			    	}
+
+			    	var igPost = "<div class='col-xs-12 col-sm-4 col-md-3'><div class='ig-thumbnail'><a class='popup " + linkClass + "' target='_blank' href='" + fullLink + "'>";
+			    		igPost += "<span class='" + playClass + "'></span><img src='" + data.data[i].images.low_resolution.url + "'></img></a>";
+			    		igPost += "</div></div>";	
+			    	 	
+			          $("#posts").append(igPost);
+
+					// Wait a split second, then add class to fade items in
+					window.setTimeout(function() {
+					    $(".ig-thumbnail").addClass("zero");
+					}, 200);
+			         
+			    }
+
+			    //Change the button text back
+			  	$('#loadMore').text('Load More');
+
+			    // Update the variable for the next page of data to be loaded
+			    nextPage = data.pagination.next_url;
+			   
+			  }
+			});
+	    })
+
+
+
+    }
+  });
+
+
+

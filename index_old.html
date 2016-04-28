@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>The Art of Phillip Rauschkolb</title>
+
+        <meta property="og:title" content="Phillip Rauschkolb Art">
+        <meta property="og:site_name" content="Phillip Rauschkolb Art">
+        <meta property="og:url" content="http://philliprauschkolb.com">
+        <meta property="og:description" content="The Art of Phillip Rauschkolb. Sketchy goodness served up *almost* daily.">
+        <meta property="og:type" content="website">
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/mediaelementplayer.css" />
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/snap.svg-min.js"></script>
+        <script src="js/mediaelement-and-player.min.js"></script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-61905511-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+
+        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        
+        <div id="contact">
+            <div class="form-header">
+                <h2>Contact Me</h2>
+                <p>Have a project for me? Just wanna say hello? <br>Fill out the form and hit send.</p>
+            </div>
+            <form id="ajax-contact" method="post" action="mailer.php">
+                <div id="form-messages"></div>
+                
+                <div class="field">
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+
+                <div class="field">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="field">
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="field">
+                    <button class="btn btn-default btn-lg" type="submit">Send</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div id="about">
+            <img src="img/phillip-rauschkolb-bio.jpg">
+            <div class="form-header">
+                <p>Phillip Rauschkolb lives in Portland, Oregon with his two sons, loving girlfriend, and snobby cat. 
+A web developer by day, cartoonist the rest of the time. He's been drawing for as long as he can remember. </p>
+            </div>
+        </div>
+
+        <div id="shop">
+            <div class="form-header">
+                <h2>Coming Soon</h2>
+                <p>Art book &amp; prints will be available soon.</p>
+            </div>
+        </div>
+
+        <div id="overlay"></div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="mobile-banner hidden-md hidden-lg">
+                    <div class="banner-fade"></div>
+                </div>
+                
+                <div class="col-md-2">
+                    <div id="sidebar">
+                        <img class="profile-pic" src="https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/11084989_981184875255784_1574034261_a.jpg"/>
+                        <h1><span>The Art of</span> Phillip Rauschkolb</h1>
+                    </div>
+                    <ul class="myNav">
+                        <li><a class="about" href="">About</a></li>
+                        <li><a class="contact" href="">Contact</a></li>
+                        <li><a class="shop" href="">Shop</a></li>
+                    </ul>
+
+                    <div class="visible-md visible-lg">
+                        <h4>Connect with me</h4>
+
+                        <ul class="share-buttons">
+                          <li><a href="https://www.facebook.com/phillip.rauschkolb" title="Find me on Facebook" target="_blank"><img src="img/Facebook.png"></a></li>
+                          <li><a href="https://twitter.com/prauschkolb" target="_blank" title="Follow me on Twitter"><img src="img/Twitter.png"></a></li>
+                          <li><a href="https://instagram.com/phillip.rauschkolb" target="_blank" title="Follow me on Instagram"><img src="img/Instagram.png"></a></li>
+                          <li><a href="https://www.youtube.com/channel/UCIg0b2wTrjKQqU3bRu2V1dA" target="_blank" title="Checkout my videos on YouTube"><img src="img/YouTube.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-10">
+
+                    <div id="posts" class="clearfix"></div>
+                
+                    <div class="more-btn hidden">
+                        <button class="btn btn-default btn-lg" id="loadMore">Load More</button>
+                    </div>
+
+                    <div class="visible-sm visible-xs">
+                        <h4>Connect with me</h4>
+
+                        <ul class="share-buttons">
+                          <li><a href="https://www.facebook.com/phillip.rauschkolb" title="Find me on Facebook" target="_blank"><img src="img/Facebook.png"></a></li>
+                          <li><a href="https://twitter.com/prauschkolb" target="_blank" title="Follow me on Twitter"><img src="img/Twitter.png"></a></li>
+                          <li><a href="https://instagram.com/phillip.rauschkolb" target="_blank" title="Follow me on Instagram"><img src="img/Instagram.png"></a></li>
+                          <li><a href="https://www.youtube.com/channel/UCIg0b2wTrjKQqU3bRu2V1dA" target="_blank" title="Checkout my videos on YouTube"><img src="img/YouTube.png"></a></li>
+                        </ul>
+                    </div>
+
+                    <small>&copy; 2015 Phillip Rauschkolb. All rights reserved.</small>
+                </div>
+                
+
+            </div>
+        </div>
+
+        
+        <script src="js/main.js"></script>
+
+
+
+    </body>
+</html>

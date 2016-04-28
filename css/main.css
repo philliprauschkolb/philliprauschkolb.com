@@ -1,0 +1,917 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('fonts/Roboto-Light-webfont.eot');
+    src: url('fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Light-webfont.woff2') format('woff2'),
+         url('fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'robotoblack';
+    src: url('fonts/Roboto-Black-webfont.eot');
+    src: url('fonts/Roboto-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Black-webfont.woff2') format('woff2'),
+         url('fonts/Roboto-Black-webfont.woff') format('woff'),
+         url('fonts/Roboto-Black-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Black-webfont.svg#robotoblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body{
+    background:#333;
+    padding-bottom:30px;
+    text-align:center;
+    color:#fff;
+    font-family: robotolight;
+}
+
+h1{
+    font-size:1.5em;
+    padding-bottom:10px;
+    font-weight:400;
+    margin-bottom:0;
+    font-family: robotoblack;
+}
+
+h2{
+   font-family: robotoblack; 
+}
+
+h1 span{
+    font-family: robotolight;
+}
+
+p{
+    font-size:.9em;
+    margin-bottom:20px;
+}
+
+.col-md-2 p{
+        padding:10px;
+        background-color:rgba(255,255,255,.1)
+    }
+
+.btn-default{
+    background-color:rgba(255,255,255,.0);
+    color:#fff;
+    transition: all .2s;
+    margin-bottom:30px
+}
+
+#overlay{
+    background:rgba(0,0,0,.7);
+    z-index:0;
+    transition:all .3s;
+    position:fixed !important;
+    top:0 !Important;
+    right:0;
+    bottom:0;
+    left:0;
+    padding:15px;
+    opacity:0
+}
+
+#overlay img{
+    border:5px solid;
+    max-width:0%;
+    transition:all .4s;
+    max-height:100%;
+}
+
+span.play{
+    display:block;
+    position:absolute;
+    height:100px;
+    background-image:url(bigplay.png);
+    background-repeat:no-repeat;
+    background-position:bottom;
+    top:0;
+    z-index:2;
+    width:100px;
+    left:50%;
+    margin-left:-50px;
+    top:50%;
+    margin-top:-50px;
+}
+
+.ig-thumbnail:hover span.play{
+    background-position:top;
+}
+
+
+img{
+    max-width: 100%
+}
+
+.profile-pic{
+    border-radius:50%;
+    border:2px solid #fff;
+    padding:5px;
+    max-width:100px;
+    background:#333;
+    margin-top:-50px
+}
+
+.ig-thumbnail{
+    text-align:center;
+    color:#fff;
+    transition:all .5s;
+    opacity:0;
+    margin:auto;
+    margin-bottom: 20px;
+    border:2px solid #fff;
+    position:relative;
+    max-width:303px;
+}
+
+.ig-thumbnail svg{
+    display:none;
+    position:absolute;
+    z-index:1;
+    left:-300px;
+    height: 100%;
+    transition:all .4s
+}
+
+.ig-thumbnail:hover svg{
+    left:-160px
+}
+
+
+.hidden{
+    display: none
+}
+
+.zero{
+    opacity: 1
+}
+
+.ig-thumbnail img{
+    display:block;
+    margin:auto;
+    transition:all .2s;
+    position:relative;
+    bottom:0;
+    right:0;
+    -webkit-backface-visibility: hidden;
+}
+
+video{
+    max-width: 100%;
+   
+}
+
+.mejs-container{
+    max-width:650px;
+    max-height:650px;
+    margin:auto
+}
+
+.mobile-banner{
+    background-image:url('https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10593309_1600083653539228_2071663831_n.jpg');
+    background-size:cover;
+    height:150px;
+    background-position:center
+}
+
+.banner-fade{
+    height:100%;
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(51,51,51,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(51,51,51,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(51,51,51,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(51,51,51,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(51,51,51,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(51,51,51,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+}
+
+.myNav{
+    list-style:none;
+    padding:0;
+    margin-bottom:30px
+}
+
+.myNav li{
+    display:inline-block;
+    margin-right:-5px
+}
+
+.myNav a{
+    color:#fff;
+    display:block;
+    padding:8px 15px;
+    transition:all .2s;
+    border:1px solid;
+    margin-right:20px;
+    border-radius:5px;
+     background-color:rgba(255,255,255,.15);
+}
+
+.myNav a:hover{
+    background-color:rgba(255,255,255,.7);
+    text-decoration:none;
+    color:#333
+}
+
+
+#contact{
+    display: none;
+    position:absolute;
+    z-index:200;
+    width:100%;
+    padding-top:50px;
+    max-width:400px;
+}
+
+#about,#shop{
+    display: none;
+    position:absolute;
+    z-index:200;
+    width:100%;
+    padding-top:50px;
+    max-width:400px;
+}
+
+#about{
+    max-width:600px
+}
+
+.form-header{
+    padding:15px;
+    background-color:rgba(0,0,0,.7);
+    max-width:400px;
+    margin:0 15px;
+}
+
+#about .form-header{
+    max-width:600px;
+}
+
+.form-header p{
+    margin-bottom:0
+}
+
+#about .form-header p{
+   font-size:1.3em;
+   padding:15px 5px;
+   text-align:left
+}
+
+#ajax-contact{
+    background-color:rgba(255,255,255,.9);
+    max-width:400px;
+    margin:0 15px;
+    padding:20px;
+    color:#333;
+}
+
+#ajax-contact input[type=text],
+#ajax-contact input[type=email],
+#ajax-contact textarea{
+    width:100%;
+    margin-bottom:15px;
+    padding:5px;
+    border:1px solid #ccc
+}
+
+#ajax-contact .btn-default{
+    background-color:#333;
+    margin-bottom:0
+}
+
+#ajax-contact .btn-default:hover{
+    background-color:#ccc
+}
+
+.caption{
+    display:none;
+}
+
+
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons li a{
+    display:inline-block;
+    width:32px;
+    height:32px !important;
+    text-align:center;
+    vertical-align:top
+}
+
+ul.share-buttons li a img{
+    opacity:.4;
+    transition:all .2s;
+}
+
+ul.share-buttons li a:hover img{
+    opacity:1
+}
+
+h4{
+    font-size:1em;
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+@media (min-width:420px){
+    #contact,
+    #about,
+    #shop{
+        left:50%;
+        margin-left:-200px
+    }
+
+    #about{
+        margin-left:-300px
+    }
+}
+
+@media (min-width:450px){
+    #ajax-contact,
+    .form-header{
+    margin:auto;
+    }
+}
+
+@media (min-width:768px){
+    .ig-thumbnail img{
+        opacity:.4;
+        transition:all .2s;
+        left:0%;
+    }
+
+    .ig-thumbnail:hover img{
+        opacity:1;
+        left:50px;
+        transition:all .7s;
+    }
+
+    .ig-thumbnail{
+        height:206px;
+        overflow:hidden;
+        margin-bottom:10px;
+    }
+
+    .ig-thumbnail svg{
+        display:block;
+    }
+
+    .ig-thumbnail:hover svg{
+        left:-120px
+    }
+
+    #posts .col-md-3{
+        padding:0 5px
+    }
+
+    #ajax-contact{
+    }
+
+    .caption{
+    display:block;
+    position:absolute;
+    left:-100px;
+    font-family:robotoblack;
+    z-index:2;
+    bottom:-70px;
+    bottom:0;
+    height:100%;
+    padding:15px;
+    padding-top:;
+    padding-right:50px;
+    color:#fff;
+    opacity:0;
+    font-size:1.2em;
+    line-height:1.5;
+    text-align:left;
+    width:100px;
+    transition:all .5s
+
+/*     -webkit-transition-property: width;
+    -webkit-transition-duration: 1s;
+    -webkit-perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateY(-90deg);
+
+    
+    -ms-transition-property: width;
+    -ms-transition-duration: 1s;
+    -ms-perspective: 1000px;
+    -ms-transform-style: preserve-3d;
+    -ms-transform: rotateY(-90deg);
+
+    transition-property: width;
+    transition-duration: 1s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: rotateY(-90deg); */
+
+/*     background:black */
+}
+
+
+
+.ig-thumbnail:hover .caption{
+/*     -webkit-transition-property: all; 
+    -webkit-transition-duration: .5s;
+    -webkit-transform: rotateY(0deg);
+    -webkit-transform-origin: left; 
+
+    -ms-transition-property: all; 
+    -ms-transition-duration: .5s;
+    -ms-transform: rotateY(0deg);
+    -ms-transform-origin: left; 
+
+    transition-property: all; 
+    transition-duration: .5s;
+    transform: rotateY(0deg);
+    transform-origin: left;  */
+    opacity:1;
+    left:0px
+}
+
+.no-csstransforms3d .caption{
+    left:-100px;
+}
+
+.no-csstransforms3d .ig-thumbnail:hover .caption{
+    left:0px;
+}
+
+
+}
+
+
+@media (min-width: 992px){
+    body{
+        padding-top:30px
+    }
+
+    .profile-pic{
+        margin-top:0;
+        margin:auto;
+        display:block;
+        max-width:80px  
+    }
+
+    #sidebar{
+        text-align: left;
+    }
+
+    .ig-thumbnail{
+        height:155px;
+    }
+
+    .ig-thumbnail:hover svg{
+        left:-90px
+    }
+
+    .ig-thumbnail:hover img{
+        left:30px;
+    }
+
+    .caption{
+        font-size:1em
+    }
+
+    #overlay img{
+    transition:all 1s;
+    }
+
+    h1{
+        background:#fff;
+        color:#333;
+        padding-top:30px;
+        padding-right:10px;
+        padding-left:10px;
+        margin-top:-25px;
+        margin-bottom:0
+    }
+
+    .col-md-2 p{
+        border-top:none;
+        padding:10px;
+        text-align:center;
+        font-size:.75em;
+        margin-bottom:0;
+        background-color:rgba(255,255,255,.1)
+    }
+
+    .myNav{
+        margin-top:0;
+        padding-right:5px;
+        border-left:1px solid rgba(255,255,255,1);
+        border-right:1px solid rgba(255,255,255,1);
+    }
+
+    .myNav li{
+    display:block;
+    }
+
+     .myNav li a{
+         border:none;
+         border-radius:0;
+         border-top:1px solid rgba(255,255,255,.2);
+         padding:10px;
+         margin-right:0;
+     }
+
+     .myNav li a:hover{
+
+     }
+
+
+     .myNav li:after{
+         display:block;
+         content:"";
+         border-bottom:0px solid #fff;
+         transition:all .2s;
+     }
+
+
+     .myNav li:last-child a{
+         border-bottom:1px solid rgba(255,255,255,1);
+     }
+
+     ul.share-buttons li a{
+         width:24px
+     }
+
+}
+
+@media (min-width: 1200px){
+
+    .col-md-2{
+        padding-right:0;
+    }
+
+    .col-md-2 p{
+        font-size:1em
+    }
+
+    .col-md-10{
+        padding-left:5px
+    }
+
+    .profile-pic{
+        max-width:50px;
+        float:left;
+        position:relative;
+        top:8px;
+        left:5px
+    }
+
+    h1{
+        padding-left: 60px;
+        background:#fff;
+        color:#333;
+        padding-top:10px;
+        padding-right:10px;
+        margin-top:0
+    }
+    
+    .ig-thumbnail{
+        height:auto;
+        max-width:none;
+    }
+
+    .ig-thumbnail:hover svg{
+    left:-140px
+    }
+
+    .profile-pic{
+        display:block;
+        margin:auto;
+    }
+
+    .ig-thumbnail img{
+        width:100%
+    }
+
+    .container{
+        width:100%;
+        max-width:1920px
+    }
+
+    .caption{
+        font-size:1.2em
+    }
+
+    ul.share-buttons li a{
+         width:32px
+     }
+}
+
+@media (min-width: 1500px){
+    .ig-thumbnail svg{
+        left:-380px
+    }
+
+    .ig-thumbnail:hover svg{
+        left:-200px
+    }
+}
